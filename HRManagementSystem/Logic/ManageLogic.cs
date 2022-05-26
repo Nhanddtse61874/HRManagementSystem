@@ -12,9 +12,20 @@ namespace HRManagementSystem.Logic
         {
             Console.WriteLine("1.Salary Employee");
             Console.WriteLine("2.Hour Employee");
-            int choice = InputInt("Choice ");
-            if (choice == 1) CreateSalariedEmployee();
-            if(choice == 2) CreateHourdEmployee();   
+            int choice = 0;
+            while (choice > 0 || choice < 3)
+            {
+                choice = InputInt("Your choice");
+                switch (choice)
+                {
+                    case 1:
+                        CreateSalariedEmployee();
+                        break;
+                    case 2:
+                        CreateHourdEmployee(); break;
+                    default: return;
+                }
+            }
         }
 
         public void CreateDepartment()
@@ -35,7 +46,7 @@ namespace HRManagementSystem.Logic
             else
             {
                 Console.WriteLine("Please choose department to add enw employee");
-                for(int i = 0; i < departments.Count; i++)
+                for (int i = 0; i < departments.Count; i++)
                 {
                     Console.WriteLine($"{i + 1} | Department Name : {departments[i].Name}");
                 }
@@ -96,7 +107,7 @@ namespace HRManagementSystem.Logic
 
         public void DisplayEmployee()
         {
-            if(employees.Count < 0)
+            if (employees.Count < 0)
             {
                 Console.WriteLine("Dont have any employee !");
                 return;
@@ -139,7 +150,7 @@ namespace HRManagementSystem.Logic
 
         public void DisplayDepartment()
         {
-            if(departments.Count < 0)
+            if (departments.Count < 0)
             {
                 Console.WriteLine("Dont have department");
                 return;
@@ -200,13 +211,13 @@ namespace HRManagementSystem.Logic
         {
             Console.WriteLine($"Please input {message}");
             string value = "";
-            
+
             while (true)
             {
                 try
                 {
                     value = Console.ReadLine();
-                    if(value.Length >= 7)
+                    if (value.Length >= 7)
                     {
                         var result = int.Parse(value);
                         break;
@@ -239,5 +250,5 @@ namespace HRManagementSystem.Logic
         }
     }
 
-   
+
 }
