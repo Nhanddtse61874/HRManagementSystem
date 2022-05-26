@@ -34,7 +34,7 @@ namespace HRManagementSystem.Logic
             Department department = new Department(name);
             departments.Add(department);
         }
-        public void CreateSalariedEmployee()
+        private void CreateSalariedEmployee()
         {
             Console.WriteLine("Create Salary Employee");
             var department = 0;
@@ -70,7 +70,7 @@ namespace HRManagementSystem.Logic
             employees.Add(emp);
         }
 
-        public void CreateHourdEmployee()
+        private void CreateHourdEmployee()
         {
             Console.WriteLine("Create Hour Employee");
             var department = 0;
