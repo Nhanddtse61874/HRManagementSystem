@@ -81,7 +81,7 @@ namespace HRManagementSystem.Logic
             }
             else
             {
-                Console.WriteLine("Please choose department to add enw employee");
+                Console.WriteLine("Please choose department to add new employee");
                 for (int i = 0; i < departments.Count; i++)
                 {
                     Console.WriteLine($"{i + 1} | Department Name : {departments[i].Name}");
